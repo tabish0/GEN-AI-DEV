@@ -1,9 +1,9 @@
 module.exports = {
     development: {
-      username: 'root',
-      password: 'mysql',
-      database: 'zone_db',
-      host: 'localhost',
-      dialect: 'mysql',
+      username:process.env.USER,
+      password:process.env.PASS,
+      database:process.env.DB,
+      host:process.env.HOST,
+      dialect:process.env.DLT,
     },
   };
