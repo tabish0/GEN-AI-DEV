@@ -5,7 +5,6 @@ const morgan = require('morgan');
 const path = require('path')
 require('dotenv').config({path:require('find-config')('.env')})
 
-
 const zoneRoutes = require('./Routes/zoneRoutes')
 const sequelize = require('./sequelize.js')
 const Zone = require('./Models/zone.js');
@@ -14,8 +13,6 @@ const Files = require('./Models/file.js')
 
 // Creating an Express application
 const app = express();
-
-console.log("------------->",process.env.HOST)
 
 // Sync the database and create the tables if they don't exist
 sequelize.sync({ force: false }).then(() => {

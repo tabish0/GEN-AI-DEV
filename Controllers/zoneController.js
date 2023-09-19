@@ -18,6 +18,9 @@ const zoneController = async (req, res) => {
       console.log(`File ${index + 1}: ${file.originalname}`);
     });
     // Create a new zone with the associated user ID
+    
+    console.log("user:",user)
+
     const zone = await Zone.create({
       province,
       city,
@@ -27,7 +30,7 @@ const zoneController = async (req, res) => {
       zoneCategory,
       landSize,
       zoneAddress,
-      UserId: user.id, // Assuming the foreign key in Zone model is UserId
+      userId: user.dataValues.userId, // Assuming the foreign key in Zone model is UserId
     });
    
     const zoneId = zone.id;
